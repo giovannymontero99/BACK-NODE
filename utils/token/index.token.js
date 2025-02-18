@@ -12,7 +12,11 @@ export function getToken(){
         },
         secret,
         {
-            expiresIn: 1
+            expiresIn: 1000 * 60
         }
     );
+}
+
+export function verifyToken(token){
+    return jwt.verify(token, secret)
 }
